@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-#import os
+import os
 
-#from aws_cdk import core as cdk
+from aws_cdk import core as cdk
 
 # For consistency with TypeScript code, `cdk` is the preferred import name for
 # the CDK's core module.  The following line also imports it as `core` for use
@@ -9,11 +9,11 @@
 # being updated to use `cdk`.  You may delete this import if you don't need it.
 from aws_cdk import core
 
-from aws_cdk.aws_cdk_stack import AwsCdkStack
+from my_first_cdk_project.my_first_cdk_project_stack import MyFirstCdkProjectStack
 
 
 app = core.App()
-AwsCdkStack(app, "AwsCdkStack",
+MyFirstCdkProjectStack(app, "MyFirstCdkProjectStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
