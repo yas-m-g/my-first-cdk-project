@@ -9,13 +9,13 @@ class CustomSnsStack(core.Stack):
         super().__init__(scope, construct_id, **kwargs)
 
     # Create SNS 
-    konstone_topic = _sns.Topic(self, 
-                                "konstoneHotTopics",
+    konstone_topic = _sns.Topic(self,
+                                "konstoneHotTopics", 
                                 display_name="Latest topics on KonSonte",
                                 topic_name="konstoneHotTopic"
                                 )
 
     #Add Subscription to SNS Topic
-    konstone_topic.add_subscription(
+    konstone_topic.add_subscription(self,
         _subs.EmailSubscription("konstone@gmail.com")
     )
